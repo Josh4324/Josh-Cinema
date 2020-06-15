@@ -1,0 +1,100 @@
+.formblock {
+    width: 100%;
+    background-color: blue;
+    padding-top: 50px;
+    height: 85vh;
+}
+
+.formbody {
+    width: 90%;
+    padding-bottom: 50px;
+    border-top-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+}
+
+.formhead {
+    text-align: center;
+    font-size: 30px;
+    padding: 20px;
+}
+
+.form {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.inputblock {
+    display: block;
+    margin: 0;
+    margin-bottom: 60px;
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    padding-left: 5px;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.submit {
+    background-color: blue;
+    padding: 5px;
+    font-size: 20px;
+    width: 100%;
+    border-radius: 5px;
+    color: white;
+}
+
+.none {
+    display: none;
+}
+
+.forgot {
+    text-align: center;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.acc {
+    text-align: center;
+    color: white;
+    padding: 15px;
+}
+
+.sign {
+    color: red;
+    padding-left: 5px;
+    text-decoration: none;
+}
+
+@media (min-width:500px) {
+    .formblock {
+        width: 100%;
+        background-color: blue;
+        padding-top: 50px;
+        height: 89vh;
+    }
+}
+
+
+@media (min-width:768px) {
+    .formbody {
+        width: 70%;
+    }
+}
+
+@media (min-width:1024px) {
+    .formbody {
+        width: 50%;
+    }
+
+    .formblock {
+        padding-top: 80px;
+    }
+}
