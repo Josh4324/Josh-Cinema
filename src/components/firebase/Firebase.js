@@ -1,17 +1,18 @@
 import firebase from "firebase";
 import "firebase/auth";
+require('dotenv').config()
 
 
 
 const config = {
-    apiKey: "AIzaSyC-aRqRBGaodd-oLzJ4waD4Zuz_x7CHZww",
-    authDomain: "cinema-60319.firebaseapp.com",
-    databaseURL: "https://cinema-60319.firebaseio.com",
-    projectId: "cinema-60319",
-    storageBucket: "cinema-60319.appspot.com",
-    messagingSenderId: "387748686853",
-    appId: "1:387748686853:web:06f12072d418ff7437006c",
-    measurementId: "G-CYVE34P9V4"
+    apiKey: process.env.apiKey,
+    authDomain: process.env.authDomain,
+    databaseURL: process.env.databaseURL,
+    projectId: process.env.projectId,
+    storageBucket: process.env.storageBucket,
+    messagingSenderId: process.env.messagingSenderId,
+    appId: process.env.appId,
+    measurementId: process.env.measurementId
 };
 
 

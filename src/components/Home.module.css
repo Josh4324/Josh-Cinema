@@ -1,0 +1,50 @@
+.videoUpload {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    box-sizing: border-box;
+    border: 1px solid orange;
+    border-radius: 10px;
+}
+
+.textarea {
+    width: 100%;
+    
+    border: none;
+    height: 50px;
+    padding-left:10px;
+    padding-top: 5px;
+    box-sizing: border-box;
+}
+
+.textarea:focus {
+    outline: none;
+}
+
+.file {
+    width:70%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.profileImg {
+    width:30px;
+    height: 30px;
+    border-radius: 50%;
+    display:inline-block;
+}
+
+.proname {
+    display:inline-block;
+    padding-top: 4px;
+    padding-left: 30px;
+}
+
+.pro {
+    padding: 10px;
+    display: flex;
+}
