@@ -41,10 +41,10 @@ const Home = (props) => {
         <div className={styles.pro}>
           <img className={styles.profileImg}
             src="https://res.cloudinary.com/josh4324/image/upload/v1590744194/mgiwtceahabuaeeincnl.jpg"
-            alt="picture"
+            alt="pic-up"
           />
           <span className={styles.proname}>Joshua Adesanya</span>
-          <input type="submit" value="Post"/>
+          <input type="submit" className={styles.postbut} value="Post"/>
         </div>
 
         <textarea
@@ -55,18 +55,18 @@ const Home = (props) => {
           rows="10"
           placeholder="Enter your movie caption"
         ></textarea>
-        <div class="file-upload">
+        <div className="file-upload">
           <input
-            class="file-upload__input"
+            className="file-upload__input"
             type="file"
             name="myFile[]"
             id="myFile"
             accept="video/*"
           />
-          <button class="file-upload__button" type="button">
+          <button className="file-upload__button" type="button">
             Upload Video
           </button>
-          <span class="file-upload__label"> </span>
+          <span className="file-upload__label"> </span>
         </div>
       </div>
       

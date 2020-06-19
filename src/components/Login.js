@@ -1,11 +1,11 @@
 import React, { useRef, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useStateValue } from "./context/context";
 import { fireAuth } from "./firebase/Firebase";
 import styles from "./Login.module.css";
 
 const Login = (props) => {
-  const [{ user }, dispatch] = useStateValue();
+  const [{ user }, ] = useStateValue();
   if (user.user !== null) {
     props.history.push("/");
   }
@@ -30,12 +30,6 @@ const Login = (props) => {
     fireAuth
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
-        dispatch({
-          type: "userData",
-          newUserdata: { user: result.user },
-        });
-        localStorage.setItem("user", JSON.stringify(result.user));
-
         props.history.push("/");
       })
       .catch(function (error) {
@@ -90,15 +84,15 @@ const Login = (props) => {
 
           <div className={styles.error} ref={ErrorRef}></div>
         </form>
-        <NavLink className={styles.forgot} to="/forgotpassword">
+        <Link className={styles.forgot} to="/forgotpassword">
           Forgot Your Password?
-        </NavLink>
+        </Link>
       </div>
       <div className={styles.acc}>
         Dont have an Account?
-        <NavLink to="/register" className={styles.sign}>
+        <Link to="/register" className={styles.sign}>
           Sign up here
-        </NavLink>
+        </Link>
       </div>
     </div>
   );

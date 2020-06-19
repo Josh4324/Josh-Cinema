@@ -1,0 +1,30 @@
+.banner {
+    width: 100%;
+    height: 25vh;
+}
+
+.pic {
+    width:150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-left:auto;
+    margin-right:auto;
+    display: block;
+    position: absolute;
+    left:0;
+    right:0;
+    top:120px;
+}
+
+.profilebox {
+    text-align:center;
+    margin-top: 100px;
+}
+
+.editp {
+    text-decoration: none;
+    padding:10px;
+    background-color: orange;;
+    color:white;
+    border-radius: 5px;
+}

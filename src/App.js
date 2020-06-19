@@ -9,6 +9,7 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import Profile from "./components/Profile";
 import Register from "./components/Register";
+import EditProfile from "./components/EditProfile";
 
 function App() {
   const initialState = {
@@ -34,6 +35,7 @@ function App() {
           <Header />
           <Route exact path="/" component={Home} />
           <Route path="/profile" component={Profile} />
+          <Route path="/editprofile" component={EditProfile} />
           <Route path="/discover" component={Discover} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />

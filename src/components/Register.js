@@ -1,12 +1,12 @@
 import React, { useRef, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../App.css";
 import { useStateValue } from "./context/context";
-import { fireAuth } from "./firebase/Firebase";
+import { fireAuth, firebase } from "./firebase/Firebase";
 import styles from "./Register.module.css";
 
 const Register = (props) => {
-  const [{ user }] = useStateValue();
+  const [{ user }, dispatch] = useStateValue();
   if (user.user !== null) {
     props.history.push("/");
   }
@@ -15,6 +15,16 @@ const Register = (props) => {
   let [confirmpassword, setConfirmPassword] = useState("");
   let [loading, setLoading] = useState("false");
   let ErrorRef = useRef("");
+
+  const writeUserData = (userId, email) => {
+    firebase
+      .database()
+      .ref("users/" + userId)
+      .set({
+        userId: userId,
+        email: email,
+      });
+  };
 
   const changeEmail = (evt) => {
     evt.preventDefault();
@@ -38,9 +48,18 @@ const Register = (props) => {
       fireAuth
         .createUserWithEmailAndPassword(email, password)
         .then((result) => {
+          let email = result.user.email;
+          let userId = result.user.uid;
+          writeUserData(userId, email);
+          dispatch({
+            type: "userData",
+            newUserdata: { user: result.user },
+          });
+          localStorage.setItem("user", JSON.stringify(result.user));
           props.history.push("/profile");
         })
         .catch(function (error) {
+          setLoading("false");
           const errorCode = error.code;
           const errorMessage = error.message;
           let err = {
@@ -108,9 +127,9 @@ const Register = (props) => {
       </div>
       <div className={styles.acc}>
         Already have an Account ?
-        <NavLink to="/login" className={styles.sign}>
+        <Link to="/login" className={styles.sign}>
           Sign in here
-        </NavLink>
+        </Link>
       </div>
     </div>
   );

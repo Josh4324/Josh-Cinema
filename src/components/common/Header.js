@@ -6,7 +6,6 @@ import Settings from "../common/Settings";
 import styles from "./Header.module.css";
 
 const Header = (props) => {
-  console.log(props);
   const hamRef = useRef(null);
   const navRef = useRef(null);
   const arrowRef = useRef(null);
